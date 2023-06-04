@@ -7,7 +7,7 @@ string reverseString(string str)
     int start = 0, end = str.length() - 1;
     while (start < end)
     {
-        swap(str[str++], str[end--]);
+        swap(str[start++], str[end--]);
     }
     return str;
 }
