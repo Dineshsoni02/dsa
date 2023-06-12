@@ -1,0 +1,15 @@
+priority_queue-> 
+max_heap(default)    min_heap()
+
+priority_queue<int> maxi;
+
+priority_queue<int, vector<int>,greater<int>> mini;
+
+
+maxi.push(0);           mini.push(5);
+maxi.push(5);           mini.push(0);
+maxi.push(2);           mini.push(1);
+maxi.push(3);           mini.push(2);
+
+maxi.top()=> 5 3 2 0
+mini.top()=> 0 1 2 5
