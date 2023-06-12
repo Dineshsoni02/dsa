@@ -11,9 +11,10 @@ int kthSmallest(int arr[], int n, int k)
         {
             if (arr[i] > arr[j])
             {
-                int t = arr[i];
-                arr[i] = arr[j];
-                arr[j] = t;
+                // int t = arr[i];
+                // arr[i] = arr[j];
+                // arr[j] = t;
+                arr[i]=arr[i]^arr[j]^(arr[j]=arr[i]);
             }
         }
     }
