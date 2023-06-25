@@ -5,7 +5,7 @@ using namespace std;
 
 void nextPermutation(vector<int> &val)
 {
-
+//using stl 😁
     next_permutation(val.begin(), val.end());
 }
 
