@@ -1,4 +1,6 @@
 #include <iostream>
+#include <unordered_map>
+
 using namespace std;
 
 // brute force
@@ -17,6 +19,22 @@ int countPairs1(int *arr, int n, int k)
     }
     return count;
 }
+int countPairs(int *arr, int n, int k)
+{
+    int count = 0;
+    unordered_map<int, int> m;
+    for (int i = 0; i < n; i++)
+    {
+        int b = k - arr[i]; // checks the difference
+        if (m[b])           // if b is present in map
+        {
+            count += m[b]; // update frequency of element in map and count
+        }
+
+        m[arr[i]]++; // updates frequency of all
+    }
+    return count;
+}
 
 int main()
 {
@@ -31,6 +49,7 @@ int main()
     cout << "enter sum key:";
     cin >> k;
 
-    cout << "result: " << countPairs1(arr, n, k);
+    // cout << "result: " << countPairs1(arr, n, k);
+    cout << "result: " << countPairs(arr, n, k);
     return 0;
 }
