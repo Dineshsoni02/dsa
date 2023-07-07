@@ -6,6 +6,7 @@ using namespace std;
 vector<int> commonElem(int *a1, int *a2, int *a3, int n1, int n2, int n3)
 {
     unordered_map<int, int> m1, m2, m3;
+    //map all the array elements
     for (int i = 0; i < n1; i++)
         m1[a1[i]]++;
     for (int j = 0; j < n2; j++)
@@ -15,10 +16,10 @@ vector<int> commonElem(int *a1, int *a2, int *a3, int n1, int n2, int n3)
     vector<int> v;
     for (int l = 0; l < n1; l++)
     {
-        if (m1[a1[l]] && m2[a1[l]] && m3[a1[l]])
+        if (m1[a1[l]] && m2[a1[l]] && m3[a1[l]]) //check if a1[l] is present in all maps or not
         {
             v.push_back(a1[l]);
-            m1[a1[l]] = 0;
+            m1[a1[l]] = 0; //update a1[l]=0 to avoid duplicate answers
         }
     }
     return v;
