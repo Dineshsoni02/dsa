@@ -3,7 +3,7 @@ using namespace std;
 
 void rearrangeArray(int *arr, int n)
 {
-    int posIndex = 0, negIndex = 1; // index used to store at alternate positions +ve at even -ve at odd
+    int posIndex = 0, negIndex = 1; // index used to store elements at alternate positions=> +ve at even -ve at odd
     int ans[n];
     for (int i = 0; i < n; i++)
     {
