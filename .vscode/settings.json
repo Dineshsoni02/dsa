@@ -2,5 +2,8 @@
     "files.associations": {
         "iostream": "cpp",
         "unordered_map": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "suff"
+    ]
 }
