@@ -59,7 +59,8 @@ long long merge(vector<int>& arr, vector<int>& temp, int left, int mid, int righ
 long long mergeSort(vector<int>& arr, vector<int>& temp, int left, int right) {
     long long inversions = 0;
     if (left < right) {
-        int mid = (left + right) / 2;
+        
+        int mid = left + (right-left) / 2;
         inversions += mergeSort(arr, temp, left, mid);
         inversions += mergeSort(arr, temp, mid + 1, right);
         inversions += merge(arr, temp, left, mid + 1, right);
