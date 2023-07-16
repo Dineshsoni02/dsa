@@ -1,8 +1,9 @@
 #include <iostream>
 #include <algorithm>
+#include <unordered_set>
 using namespace std;
 
-//better approach
+// better approach O(n^2)
 int longConSeq(int *arr, int n)
 {
     if (n == 0)
@@ -28,6 +29,37 @@ int longConSeq(int *arr, int n)
     }
     return longest;
 }
+// optimal using unordered_set
+int longConSeqOP(int *arr, int n)
+{
+    if (n == 0)
+        return 0;
+    unordered_set<int> st;
+    int cnt = 0;
+    int longest = 1;
+    for (int i = 0; i < n; i++)
+    {
+        st.insert(arr[i]);
+    }
+
+    for (auto it : st)
+    {
+        if (st.find(it - 1) == st.end())
+        {
+            cnt = 1;
+            int x = it;
+            while (st.find(x + 1) != st.end())
+            {
+                cnt += 1;
+                x += 1;
+            }
+
+            longest = max(longest, cnt);
+        }
+    }
+    return longest;
+}
+
 int main()
 {
     int arr[20], n;
@@ -38,6 +70,7 @@ int main()
     {
         cin >> arr[i];
     }
-    cout << "longest consecutive sequence number is :" << longConSeq(arr, n);
+    cout << "longest consecutive sequence number is :" << longConSeq(arr, n)<<endl;
+    cout << "(optimal) longest consecutive sequence number is :" << longConSeqOP(arr, n);
     return 0;
 }
