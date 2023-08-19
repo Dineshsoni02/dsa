@@ -6,6 +6,7 @@
         int startingCol = 0;
         int endingRow = row-1;
         int endingCol = col-1;
+        
         while(count<total){
             //printing starting row
             for(int i = startingCol;count<total && i<=endingCol;i++){
